@@ -15,6 +15,15 @@ addExpenseButton.addEventListener("click", function() {
     total += Number(amount);
     totalExpense.textContent = "Tổng chi tiêu: " + total + "đ";
     expenseItem.textContent = name + " - " + amount + "đ";
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Xóa";
+    expenseItem.appendChild(deleteButton);
+    deleteButton.addEventListener("click", function() 
+    {
+        total -= Number(amount);
+        totalExpense.textContent = "Tổng chi tiêu: " + total + "đ";
+        expenseItem.remove();
+    });
     expenseList.appendChild(expenseItem);
     expenseNameInput.value = "";
     expenseAmountInput.value = "";
