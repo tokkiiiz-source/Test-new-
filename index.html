@@ -3,34 +3,101 @@
     <style>
     body {
         font-family: Arial, sans-serif;
-        max-width: 600px;
+        max-width: 900px;
         margin: 40px auto;
+        padding: 24px;
+        background-color: #f4f7f5;
+        color: #1f2937;
     }
     h1 {
-    text-align: center;
-    margin-bottom: 10px;
+        text-align: center;
+        margin-bottom: 10px;
     }
     #totalExpense {
-    font-size: 20px;
-    font-weight: bold;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #ffffff;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        border-left: 5px solid #16a34a;
+        margin: 24px 0;
+    }
+    #expenseList {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0;
+    }
+
+    #expenseList li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 16px;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
     }
     #expenseList li {
-    margin: 8px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    }
-    #expenseList li {
-    margin: 8px 0;
+        margin: 8px 0;
     }
     input, button {
-        padding: 8px;
+        padding: 10px 12px;
         margin: 4px;
+        border-radius: 8px;
+    }
+
+    input {
+        border: 1px solid #d1d5db;
+        background-color: #ffffff;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+        border-color: #16a34a;
+        box-shadow: 0 0 0 3px #dcfce7;
+    }
+
+    button {
+        background-color: #16a34a;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        filter: brightness(0.92);
+    }
+
+    button:active {
+        transform: scale(0.97);
     }
     #expenseList button {
-    margin-left: 10px;
-    padding: 5px 10px;
+        margin-left: 10px;
+        padding: 8px 12px;
+        background-color: #fee2e2;
+        color: #b91c1c;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
     }
+    @media (max-width: 600px) {
+    body {
+        margin: 16px auto;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 6px 0;
+    }
+}
 </style>
 <head>
     <title>My Expense Tracker</title>

@@ -4,7 +4,7 @@ const expenseAmountInput = document.getElementById("expenseAmount");
 const expenseList = document.getElementById("expenseList");
 const totalExpense = document.getElementById("totalExpense");
 let total = 30000;
-addExpenseButton.addEventListener("click", function() {
+function addExpense() {
     const name = expenseNameInput.value;
     const amount = expenseAmountInput.value;
     if (name === "" || amount === "") 
@@ -27,4 +27,10 @@ addExpenseButton.addEventListener("click", function() {
     expenseList.appendChild(expenseItem);
     expenseNameInput.value = "";
     expenseAmountInput.value = "";
+}
+addExpenseButton.addEventListener("click", addExpense);
+expenseAmountInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        addExpense();
+    }
 });
