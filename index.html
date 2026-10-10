@@ -13,16 +13,22 @@
         text-align: center;
         margin-bottom: 10px;
     }
+    
+    
     #totalExpense {
-        font-size: 20px;
-        font-weight: bold;
-        background-color: #ffffff;
-        padding: 24px;
-        border-radius: 12px;
-        border: 1px solid #e5e7eb;
-        border-left: 5px solid #16a34a;
-        margin: 24px 0;
+        font-size: 23px;
+        font-weight: 700;
+        color: #16a34a;
+        background: transparent;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+        letter-spacing: -0.5px;
     }
+
+
     #expenseList {
         list-style: none;
         padding: 0;
@@ -98,20 +104,476 @@
         margin: 6px 0;
     }
 }
+
+/* Premium Finance layout */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    gap: 32px;
+}
+
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    padding: 28px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+}
+
+.logo {
+    margin: 0 0 40px;
+    font-size: 26px;
+    color: #1f2937;
+}
+
+.logo span {
+    color: #16a34a;
+}
+
+.menu-label {
+    margin-bottom: 14px;
+    color: #9ca3af;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #6b7280;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: #eaf8ef;
+    color: #15803d;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-header p {
+    margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+    .app-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sidebar {
+        width: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.summary-card {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.04);
+}
+#incomeAmount {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0;
+}
+
+.income-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.income-buttons button {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 10px 12px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.summary-card p {
+    margin: 0 0 12px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.summary-card h3 {
+    margin: 0;
+    font-size: 23px;
+    color: #1f2937;
+}
+
+@media (max-width: 700px) {
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.add-expense-card {
+    margin: 24px 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.04);
+}
+
+.add-expense-card h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    color: #1f2937;
+}
+
+.add-expense-card p {
+    margin: 0 0 20px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.expense-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.expense-form input,
+.expense-form button {
+    margin: 0;
+}
+
+.expense-form input {
+    flex: 1;
+    min-width: 140px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .expense-form {
+        flex-direction: column;
+    }
+
+    .expense-form input,
+    .expense-form button {
+        width: 100%;
+    }
+}
+
+.transactions-section {
+    margin-top: 32px;
+}
+
+.section-heading {
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    margin: 0 0 6px;
+    color: #1f2937;
+    font-size: 22px;
+}
+
+.section-heading p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+#expenseList li {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#expenseList li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.06);
+}
+.add-expense-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.add-expense-header h2 {
+    margin: 0;
+}
+
+#openExpenseModal {
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .add-expense-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.5);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 460px;
+    box-sizing: border-box;
+    padding: 24px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+#closeExpenseModal {
+    flex-shrink: 0;
+    background: #f3f4f6;
+    color: #4b5563;
+    font-size: 24px;
+    padding: 4px 12px;
+}
+
 </style>
 <head>
     <title>My Expense Tracker</title>
 </head>
+
 <body>
-    <h1>Expense Tracker</h1>
-    <p>Quản lý các khoản chi tiêu của bạn</p>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2 class="logo">Finance<span>.</span></h2>
+
+            <p class="menu-label">MENU</p>
+
+
+        <nav>
+            <a href="#" class="nav-item active" data-page="overview">Tổng quan</a>
+            <a href="#" class="nav-item" data-page="transactions">Giao dịch</a>
+            <a href="#" class="nav-item" data-page="statistics">Thống kê</a>
+            <a href="#" class="nav-item" data-page="settings">Cài đặt</a>
+        </nav>
+
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <p>Quản lý các khoản chi tiêu của bạn</p>
+                </div>
+            </header>
+            
+
+<section class="page-section" id="transactionsPage" hidden>
+    <div class="section-heading">
+        <h2>Giao dịch</h2>
+        <p>Quản lý các khoản chi tiêu của bạn.</p>
+    </div>
+
+    <div class="summary-card">
+        <p>Tổng số giao dịch</p>
+        <h3 id="transactionCount">1 khoản</h3>
+    </div>
+
+    <section class="transactions-section">
+        <div class="section-heading">
+            <h2>Danh sách giao dịch</h2>
+            <p>Các khoản chi tiêu đã ghi nhận</p>
+        </div>
+
+        <ul id="allTransactionsList">
+        </ul>
+    </section>
+</section>
+
+
+    <section class="page-section" id="statisticsPage" hidden>
+    <div class="section-heading">
+        <h2>Thống kê</h2>
+        <p>Tổng quan tình hình chi tiêu của bạn.</p>
+    </div>
+
+    <div class="summary-cards">
+        <div class="summary-card">
+            <p>Tổng chi tiêu</p>
+            <h3 id="statsTotalExpense">30000đ</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Số giao dịch</p>
+            <h3 id="statsTransactionCount">1</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Chi tiêu trung bình</p>
+            <h3 id="statsAverageExpense">30000đ</h3>
+        </div>
+    </div>
+
+    <section class="transactions-section">
+        <div class="section-heading">
+            <h2>Phân tích chi tiêu</h2>
+            <p>Biểu đồ sẽ được cập nhật theo dữ liệu giao dịch.</p>
+        </div>
+
+        <div id="expenseChart" class="summary-card">
+            Chưa có dữ liệu thống kê.
+        </div>
+    </section>
+</section>
+
+    <section class="page-section" id="settingsPage" hidden>
+    <div class="section-heading">
+        <h2>Cài đặt</h2>
+        <p>Tùy chỉnh trải nghiệm sử dụng Finance.</p>
+    </div>
+
+    <section class="add-expense-card">
+        <h2>Giao diện</h2>
+        <p>Chọn giao diện phù hợp với bạn.</p>
+
+        <label for="themeSelect">Chế độ hiển thị</label>
+        <select id="themeSelect">
+            <option value="light">Sáng</option>
+            <option value="dark">Tối</option>
+        </select>
+    </section>
+
+    <section class="add-expense-card">
+        <h2>Dữ liệu</h2>
+        <p>Đưa giao diện về trạng thái ban đầu bằng cách tải lại trang.</p>
+        <button id="resetSettings" type="button">Đặt lại giao diện</button>
+    </section>
+</section>
+
+
+    <section class="dashboard">
+    <div class="summary-cards">
+        <div class="summary-card">
+            <p>Tổng thu nhập</p>
+            <h3 id="totalIncome">0đ</h3>
+            <input type="number" id="incomeAmount" placeholder="Nhập thu nhập">
+            <div class="income-buttons">
+            <button id="addIncome">Cộng thu nhập</button>
+            <button id="editIncome" type="button">Chỉnh sửa</button>
+</div>
+        </div>
+
+        <div class="summary-card">
+            <p>Tổng chi tiêu</p>
+            <h3 id="totalExpense">0đ</h3>
+        </div>
+
+        <div class="summary-card">
+            <p>Số dư</p>
+            <h3 id="balance">0đ</h3>
+        </div>
+    </div>
+<section class="add-expense-card">
+    <div class="add-expense-header">
+    <h2>Thêm khoản chi</h2>
+    <button id="openExpenseModal" type="button">+ Thêm mới</button>
+</div>
+    <p>Nhập thông tin khoản chi tiêu mới của bạn.</p>
+
+    <div class="expense-form">
+        <input
+            id="expenseName"
+            type="text"
+            placeholder="Tên khoản chi"
+        >
+
+        <input
+            id="expenseAmount"
+            type="number"
+            placeholder="Số tiền"
+        >
+
+        <button id="addExpense">Thêm khoản chi</button>
+    </div>
+</section>
+
+    <section class="transactions-section">
+    <div class="section-heading">
+        <h2>Giao dịch gần đây</h2>
+        <p>Các khoản chi tiêu của bạn</p>
+    </div>
+
     <ul id="expenseList">
-        <li>Ăn sáng - 30000đ</li>
     </ul>
-    <p id="totalExpense">Tổng chi tiêu: 30000đ</p>
-    <input id="expenseName" type="text" placeholder="Tên khoản chi">
-    <input id="expenseAmount" type="number" placeholder="Số tiền">
-    <button id="addExpense">Thêm khoản chi</button>
+</section>
+            </section>
+            <div id="expenseModal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Thêm khoản chi mới</h2>
+            <button id="closeExpenseModal" type="button">×</button>
+        </div>
+
+        <p>Nhập thông tin khoản chi của bạn.</p>
+<div class="expense-form">
+    <input id="modalExpenseName" type="text" placeholder="Tên khoản chi">
+    <input id="modalExpenseAmount" type="number" placeholder="Số tiền">
+    <button id="modalAddExpense" type="button">Thêm khoản chi</button>
+</div>
+
+    </div>
+</div>
+        </main>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
